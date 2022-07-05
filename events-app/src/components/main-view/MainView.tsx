@@ -6,12 +6,10 @@ const URL = "https://tlv-events-app.herokuapp.com/events/uk/london";
 
 const MainView: React.FC = () => {
   const [events, setEvents] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios.get(URL).then((response) => {
       setEvents(response.data);
-      setIsLoading(false);
     });
   }, []);
 
@@ -22,9 +20,7 @@ const MainView: React.FC = () => {
   return (
     <>
       <h2>Events</h2>
-      {events.map((event) => {
-        return <EventList event={event} />;
-      })}
+      <EventList events={events} />;
     </>
   );
 };
