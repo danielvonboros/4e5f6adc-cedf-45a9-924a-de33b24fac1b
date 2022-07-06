@@ -17,7 +17,7 @@ interface IVenue {
     _id: {oid:string}
   }
   
-  export interface IEventData extends Array {
+  export interface IEventData {
     _id: string,
     title: string,
     flyerFront: string,
