@@ -10,9 +10,16 @@ const EventList: React.FC<{ events: IEventData[] }> = ({ events }) => {
 
   return (
     events &&
-    events.map((event: IEventData) => {
-      return <EventCard event={event} />;
-    })
+    events
+      .sort((a, b) =>
+        (a.startTime === undefined ? a.date : a.startTime) >
+        (b.startTime === undefined ? b.date : b.startTime)
+          ? 1
+          : -1
+      )
+      .map((event: IEventData) => {
+        return <EventCard event={event} />;
+      })
   );
 };
 
