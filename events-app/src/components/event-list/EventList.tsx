@@ -2,6 +2,7 @@ import React from "react";
 import EventCard from "../event-card/EventCard";
 import { IEventData } from "../../helpers/eventtypes";
 
+// @ts-ignore
 const EventList: React.FC<{ events: IEventData[] }> = ({ events }) => {
   if (!events) {
     return null;

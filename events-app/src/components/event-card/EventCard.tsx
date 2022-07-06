@@ -11,7 +11,7 @@ const EventCard: React.FC<{ event: IEventData }> = ({ event }) => {
     <>
       <CardContent>
         <Box sx={{ height: "4.5em", overflow: "hidden" }}>
-          <Typography variant="h6" sx={{ color: "#615D6C" }}>
+          <Typography variant="h6" sx={{ color: "#615D6C", fontWeight: 600 }}>
             {event.title}
           </Typography>
         </Box>
@@ -38,9 +38,15 @@ const EventCard: React.FC<{ event: IEventData }> = ({ event }) => {
         ) : (
           <>
             <Typography>{`date: ${event.date}`}</Typography>
+
             <Typography>no exact time provided</Typography>
           </>
         )}
+        <a href={event.venue.direction} target="_blank" rel="noreferrer">
+          <Typography variant="body1" sx={{ mt: 1, fontWeight: 600 }}>
+            {event.venue.name}
+          </Typography>
+        </a>
         <Typography>
           {event.city} | {event.country}
         </Typography>
