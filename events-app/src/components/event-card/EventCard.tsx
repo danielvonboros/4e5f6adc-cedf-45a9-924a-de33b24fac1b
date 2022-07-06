@@ -15,14 +15,35 @@ const EventCard: React.FC<{ event: IEventData }> = ({ event }) => {
             {event.title}
           </Typography>
         </Box>
-        <CardMedia
-          component="img"
-          height="450"
-          image={event.flyerFront}
-          alt={`event-${event._id}`}
-        />
-        <Typography>{event.city}</Typography>
-        <Typography>{event.country}</Typography>
+        {event.flyerFront ? (
+          <CardMedia
+            component="img"
+            height="450"
+            image={event.flyerFront}
+            alt={`event-${event._id}`}
+          />
+        ) : (
+          <CardMedia
+            component="img"
+            height="450"
+            image={"https://picsum.photos/350/450"}
+            alt={`event-${event._id}`}
+          />
+        )}
+        {event.startTime !== undefined ? (
+          <>
+            <Typography>{`starts: ${event.startTime}`}</Typography>
+            <Typography>{`ends: ${event.endTime}`}</Typography>{" "}
+          </>
+        ) : (
+          <>
+            <Typography>{`date: ${event.date}`}</Typography>
+            <Typography>no exact time provided</Typography>
+          </>
+        )}
+        <Typography>
+          {event.city} | {event.country}
+        </Typography>
       </CardContent>
     </>
   );
