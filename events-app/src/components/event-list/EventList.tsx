@@ -1,15 +1,18 @@
 import React from "react";
 import EventCard from "../event-card/EventCard";
-import { IEventList, IEventData } from "../../helpers/eventtypes";
+import { IEventData } from "../../helpers/eventtypes";
 
-const EventList: React.FC<{
-  events: IEventList;
-}> = (events) => {
+const EventList: React.FC<{ events: IEventData[] }> = ({ events }) => {
   if (!events) {
     return null;
   }
 
-  return events.map((event: IEventData) => <EventCard event={event} />);
+  return (
+    events &&
+    events.map((event: IEventData) => {
+      return <EventCard event={event} />;
+    })
+  );
 };
 
 export default EventList;

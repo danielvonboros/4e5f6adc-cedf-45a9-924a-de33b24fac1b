@@ -17,7 +17,7 @@ interface IVenue {
     _id: {oid:string}
   }
   
-  export interface IEventData extends Object {
+  export interface IEventData extends Array {
     _id: string,
     title: string,
     flyerFront: string,
@@ -33,8 +33,4 @@ interface IVenue {
     country: string,
     private: boolean,
     __v: number
-  }
-
-  export interface IEventList extends Array {
-    events: IEventData[] | []
   }
