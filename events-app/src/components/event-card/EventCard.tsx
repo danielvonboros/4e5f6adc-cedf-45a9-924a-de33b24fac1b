@@ -10,6 +10,9 @@ const EventCard: React.FC<{ event: IEventData }> = ({ event }) => {
   const card = (
     <>
       <CardContent>
+        {/* Because some of the titles are quite long, text is only displayed 
+        for two lines and the overflow is hidden, so the filter function also works on the text
+        that is hidden*/}
         <Box sx={{ height: "4.5em", overflow: "hidden" }}>
           <Typography variant="h6" sx={{ color: "#615D6C", fontWeight: 600 }}>
             {event.title}
@@ -30,6 +33,9 @@ const EventCard: React.FC<{ event: IEventData }> = ({ event }) => {
             alt={`event-${event._id}`}
           />
         )}
+        {/* Because some events don't provide a startTime, but I wanted the CardSize to be equal to
+        those that do, I added an additional line, that there was no exact time provided. */}
+
         {event.startTime !== undefined ? (
           <>
             <Typography>{`starts: ${event.startTime}`}</Typography>

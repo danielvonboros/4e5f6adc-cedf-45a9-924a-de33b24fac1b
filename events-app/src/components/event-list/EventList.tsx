@@ -8,6 +8,12 @@ const EventList: React.FC<{ events: IEventData[] }> = ({ events }) => {
     return null;
   }
 
+  /*
+  The sort function compares the startTime of the different events,
+  when an event doesn't have a startTime (some don't), it is compared to the date of the event
+  (date also provides a time here) and then sorted and displayed 
+  */
+
   return (
     events &&
     events
