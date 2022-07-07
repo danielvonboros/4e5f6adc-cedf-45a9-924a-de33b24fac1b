@@ -3,6 +3,7 @@ import axios from "axios";
 import EventList from "../event-list/EventList";
 import { IEventData } from "../../helpers/eventtypes";
 import { Box, CircularProgress, Typography } from "@mui/material";
+import TopBar from "../top-bar/TopBar";
 
 const URL = "https://tlv-events-app.herokuapp.com/events/uk/london";
 
@@ -30,7 +31,7 @@ const MainView: React.FC = () => {
   return (
     <>
       <Box sx={{ width: "100vw", backgroundColor: "#EBF5FF" }}>
-        <h2>Events</h2>
+        <TopBar />
         <Box
           sx={{
             display: "flex",
