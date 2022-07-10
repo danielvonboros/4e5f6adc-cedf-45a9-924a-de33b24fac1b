@@ -29,18 +29,34 @@ The React Application is a single page application and works with
 
 ## run the project
 
+clone git repo
+
 ```
 $ git clone https://github.com/danielvonboros/4e5f6adc-cedf-45a9-924a-de33b24fac1b
 ```
+
+change into work directory
 
 ```
 $ cd 4e5f6adc-cedf-45a9-924a-de33b24fac1b
 ```
 
+change into work directory
+
 ```
 $ cd events-app
 ```
 
+install dependencies
+
+```
+$ npm install
+```
+
+run the app
+
 ```
 $ npm start
 ```
+
+if the browser doesn't open automatically, open a new browser window with localhost:3000 or 127.0.0.1 (or maybe a different port - for additional info check the console)
