@@ -55,6 +55,12 @@ const TopBar: React.FC<{ searchInput: any }> = ({ searchInput }) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+      {/*
+        For some unexplainable reason, the MUI input doesn't accept my search Queries.
+        When using a simple HTML input, it works, that's why I included an unstyled HTML 
+        component with the only necessary prop here for demo purposes.
+      */}
+      {/* <input onChange={searchInput} /> */}
       <AppBar color="default" position="static">
         <Toolbar>
           <EventIcon />
