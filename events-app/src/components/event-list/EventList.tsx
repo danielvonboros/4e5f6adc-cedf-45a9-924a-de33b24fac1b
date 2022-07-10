@@ -3,7 +3,10 @@ import EventCard from "../event-card/EventCard";
 import { IEventData } from "../../helpers/eventtypes";
 
 // @ts-ignore
-const EventList: React.FC<{ events: IEventData[] }> = ({ events }) => {
+const EventList: React.FC<{ events: IEventData[]; searchQuery: string }> = ({
+  events,
+  searchQuery,
+}) => {
   if (!events) {
     return null;
   }
@@ -17,6 +20,17 @@ const EventList: React.FC<{ events: IEventData[] }> = ({ events }) => {
   return (
     events &&
     events
+      .filter((val) => {
+        if (searchQuery === "") {
+          return val;
+        } else if (
+          val.title.toLowerCase().includes(searchQuery.toLowerCase())
+        ) {
+          return val;
+        } else {
+          return null;
+        }
+      })
       .sort((a, b) =>
         (a.startTime === undefined ? a.date : a.startTime) >
         (b.startTime === undefined ? b.date : b.startTime)

@@ -12,7 +12,7 @@ import EventIcon from "@mui/icons-material/Event";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import React from "react";
 
-const TopBar: React.FC = () => {
+const TopBar: React.FC<{ searchInput: any }> = ({ searchInput }) => {
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -73,6 +73,7 @@ const TopBar: React.FC = () => {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              onChange={searchInput}
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />

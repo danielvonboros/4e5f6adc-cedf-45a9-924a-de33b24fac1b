@@ -10,6 +10,14 @@ const URL = "https://tlv-events-app.herokuapp.com/events/uk/london";
 const MainView: React.FC = () => {
   const [events, setEvents] = useState<IEventData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const searchInput = (e: { target: { value: any } }) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+  };
+
+  console.log(searchQuery);
 
   useEffect(() => {
     axios.get(URL).then((response) => {
@@ -31,7 +39,7 @@ const MainView: React.FC = () => {
   return (
     <>
       <Box sx={{ width: "100vw", backgroundColor: "#EBF5FF" }}>
-        <TopBar />
+        <TopBar searchInput={searchInput} />
         <Box
           sx={{
             display: "flex",
@@ -40,7 +48,7 @@ const MainView: React.FC = () => {
             flexWrap: "wrap",
           }}
         >
-          <EventList events={events} />
+          <EventList events={events} searchQuery={searchQuery} />
         </Box>
       </Box>
     </>
