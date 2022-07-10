@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EventCard from "../event-card/EventCard";
 import { IEventData } from "../../helpers/eventtypes";
+import Box from "@mui/material/Box";
 
 // @ts-ignore
 const EventList: React.FC<{ events: IEventData[]; searchQuery: string }> = ({
@@ -13,8 +14,7 @@ const EventList: React.FC<{ events: IEventData[]; searchQuery: string }> = ({
   }
 
   const addToCartClick = (id: number) => {
-    const idsToAdd = id;
-    setIdInShoppingCart(idsToAdd);
+    setIdInShoppingCart(id);
   };
 
   console.log(idInShoppingCart);
@@ -23,6 +23,10 @@ const EventList: React.FC<{ events: IEventData[]; searchQuery: string }> = ({
   The sort function compares the startTime of the different events,
   when an event doesn't have a startTime (some don't), it is compared to the date of the event
   (date also provides a time here) and then sorted and displayed 
+
+  The allItems.filter method does not provide the desired items to be excluded from
+  the list. The idea was to exclude the items that are being selected in the list with the 
+  '+'- Button and display them in another component.
   */
 
   return (
