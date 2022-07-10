@@ -1,8 +1,20 @@
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { IEventData } from "../../helpers/eventtypes";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 
-const EventCard: React.FC<{ event: IEventData }> = ({ event }) => {
+const EventCard: React.FC<{ event: IEventData; addToCartClick: any }> = ({
+  event,
+  addToCartClick,
+}) => {
   if (!event) {
     return null;
   }
@@ -39,11 +51,11 @@ const EventCard: React.FC<{ event: IEventData }> = ({ event }) => {
         {event.startTime !== undefined ? (
           <>
             <Typography>{`starts: ${event.startTime}`}</Typography>
-            <Typography>{`ends: ${event.endTime}`}</Typography>{" "}
+            <Typography>{`ends: ${event.endTime}`}</Typography>
           </>
         ) : (
           <>
-            <Typography>{`date: ${event.date}`}</Typography>
+            <Typography>{`date: ${event.date}.slice(0,10)`}</Typography>
 
             <Typography>no exact time provided</Typography>
           </>
@@ -57,6 +69,15 @@ const EventCard: React.FC<{ event: IEventData }> = ({ event }) => {
           {event.city} | {event.country}
         </Typography>
       </CardContent>
+      <CardActions sx={{ display: "flex", flexDirection: "row-reverse" }}>
+        <IconButton
+          onClick={() => {
+            addToCartClick(event._id);
+          }}
+        >
+          <AddCircleIcon />
+        </IconButton>
+      </CardActions>
     </>
   );
 

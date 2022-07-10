@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import EventCard from "../event-card/EventCard";
 import { IEventData } from "../../helpers/eventtypes";
 
@@ -7,9 +7,17 @@ const EventList: React.FC<{ events: IEventData[]; searchQuery: string }> = ({
   events,
   searchQuery,
 }) => {
+  const [idInShoppingCart, setIdInShoppingCart] = useState([]);
   if (!events) {
     return null;
   }
+
+  const addToCartClick = (id: number) => {
+    const idsToAdd = id;
+    setIdInShoppingCart(idsToAdd);
+  };
+
+  console.log(idInShoppingCart);
 
   /*
   The sort function compares the startTime of the different events,
@@ -38,7 +46,7 @@ const EventList: React.FC<{ events: IEventData[]; searchQuery: string }> = ({
           : -1
       )
       .map((event: IEventData) => {
-        return <EventCard event={event} />;
+        return <EventCard event={event} addToCartClick={addToCartClick} />;
       })
   );
 };
