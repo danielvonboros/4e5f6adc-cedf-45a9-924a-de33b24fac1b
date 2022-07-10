@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# events-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## app to display music events in london, GB
 
-## Available Scripts
+<p>React Application for <a href="https://tlv-events-app.herokuapp.com/events/uk/london">London Events API</a>
+<p>This React Event application is supposed to give you the following functionality</p>
 
-In the project directory, you can run:
+<ul>
+<li>Display Events</li>
+<li>Music events sorted by date</li> 
+<li><i>add music events to the shopping basket - {feature not yet implemented}</li>
+<li>show the location of an event in a new browser tab by clicking on the address of the event</li>
+<li><i>find an event by entering a query in the search bar - {feature not yet implemented - feature does work, but not with the standard MUI input field, look at comments}</li>
+</ul>
 
-### `npm start`
+### Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The React Application is a single page application and works with
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Tools used
 
-### `npm test`
+| Property                              | Tool       |
+| ------------------------------------- | ---------- |
+| Language                              | TypeScript |
+| Library                               | React      |
+| Styling                               | MUI        |
+| API calls                             | axios-http |
+| Stock photos for events without cover | picsum.com |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## run the project
 
-### `npm run build`
+```
+$ git clone https://github.com/danielvonboros/4e5f6adc-cedf-45a9-924a-de33b24fac1b
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ cd 4e5f6adc-cedf-45a9-924a-de33b24fac1b
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ cd events-app
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ npm start
+```

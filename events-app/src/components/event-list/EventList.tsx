@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import EventCard from "../event-card/EventCard";
 import { IEventData } from "../../helpers/eventtypes";
-import Box from "@mui/material/Box";
 
 // @ts-ignore
 const EventList: React.FC<{ events: IEventData[]; searchQuery: string }> = ({
@@ -13,7 +12,7 @@ const EventList: React.FC<{ events: IEventData[]; searchQuery: string }> = ({
     return null;
   }
 
-  const addToCartClick = (id: number) => {
+  const addToCartClick = (id: any) => {
     setIdInShoppingCart(id);
   };
 
